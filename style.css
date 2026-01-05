@@ -1,0 +1,301 @@
+/* =======================
+   GLOBAL RESET
+======================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", system-ui, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #667eea, #764ba2, #1a093f);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  color: #fff;
+}
+
+/* =======================
+   MAIN CONTAINER
+======================= */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 35px;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+  animation: fadeIn 0.9s ease;
+}
+
+/* =======================
+   HEADER
+======================= */
+header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ffffff, #dcdcff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+header p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.85);
+}
+
+/* =======================
+   UPLOAD CARD
+======================= */
+.upload-card {
+  background: rgba(255,255,255,0.18);
+  border-radius: 22px;
+  padding: 30px;
+  margin-bottom: 35px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+}
+
+/* =======================
+   DRAG & DROP ZONE
+======================= */
+.drop-zone {
+  border: 2px dashed rgba(255,255,255,0.6);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.drop-zone:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: #00eaff;
+}
+
+.drop-zone p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.drop-zone span {
+  display: block;
+  margin: 8px 0;
+  opacity: 0.8;
+}
+
+.drop-zone input {
+  display: none;
+}
+
+/* =======================
+   BUTTONS
+======================= */
+.upload-label {
+  display: inline-block;
+  padding: 14px 40px;
+  border-radius: 40px;
+  background: linear-gradient(135deg, #ff8a00, #e52e71);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  transition: 0.3s;
+}
+
+.upload-label:hover {
+  transform: scale(1.08);
+}
+
+.upload-btn {
+  margin-top: 20px;
+  padding: 14px 50px;
+  border-radius: 40px;
+  border: none;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  font-size: 1.05rem;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  transition: 0.3s;
+}
+
+.upload-btn:hover {
+  transform: scale(1.08);
+}
+
+/* =======================
+   PREVIEW
+======================= */
+.preview {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.preview img,
+.preview video {
+  max-width: 260px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.45);
+}
+
+/* =======================
+   PROGRESS BAR
+======================= */
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 10px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.progress {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #00eaff, #0072ff);
+  transition: width 0.3s;
+}
+
+/* =======================
+   SEARCH
+======================= */
+.search-box {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.search-box input {
+  width: 300px;
+  max-width: 90%;
+  padding: 12px 18px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+/* =======================
+   GALLERY
+======================= */
+.gallery-title {
+  font-size: 1.8rem;
+  margin-bottom: 18px;
+  background: linear-gradient(90deg, #ffffff, #d4e2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 22px;
+}
+
+.empty-text {
+  grid-column: 1 / -1;
+  text-align: center;
+  opacity: 0.7;
+}
+
+/* =======================
+   MEDIA CARD
+======================= */
+.media-card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.18);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.media-card:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+.media-card img,
+.media-card video {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* =======================
+   MODAL
+======================= */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content img,
+.modal-content video {
+  max-width: 80%;
+  max-height: 80vh;
+  border-radius: 20px;
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+/* =======================
+   FOOTER
+======================= */
+footer {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.8);
+}
+
+/* =======================
+   ANIMATION
+======================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.1rem;
+  }
+
+  .media-card img,
+  .media-card video {
+    height: 180px;
+  }
+}

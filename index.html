@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Media Share App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- ================= HEADER ================= -->
+  <header>
+    <h1>📸 Media Share</h1>
+    <p>Upload, preview & explore images and videos globally</p>
+  </header>
+
+  <!-- ================= UPLOAD SECTION ================= -->
+  <div class="upload-card">
+
+    <!-- Drag & Drop -->
+    <div class="drop-zone" id="dropZone">
+      <p>Drag & Drop media here</p>
+      <span>or</span>
+      <label for="fileInput" class="upload-label">Browse Files</label>
+      <input type="file" id="fileInput" accept="image/*,video/*">
+    </div>
+
+    <!-- Preview -->
+    <div class="preview" id="preview"></div>
+
+    <!-- Progress -->
+    <div class="progress-bar">
+      <div class="progress" id="progress"></div>
+    </div>
+
+    <button class="upload-btn">Upload Media</button>
+  </div>
+
+  <!-- ================= SEARCH ================= -->
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search media type (image / video)">
+  </div>
+
+  <!-- ================= GALLERY ================= -->
+  <h2 class="gallery-title">🌍 Public Gallery</h2>
+
+  <div class="gallery" id="gallery">
+    <p class="empty-text">No media uploaded yet</p>
+  </div>
+
+  <!-- ================= MODAL ================= -->
+  <div class="modal" id="mediaModal">
+    <span class="close" id="closeModal">&times;</span>
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    Powered by Cloudinary ☁️ | Responsive • Secure • Fast
+  </footer>
+
+</div>
+
+<!-- ================= SCRIPT ================= -->
+<script src="script.js"></script>
+
+</body>
+</html>
